@@ -1,0 +1,266 @@
+{
+    "variables": [
+        {
+            "domain": {
+                "max": 9, 
+                "step": 1, 
+                "min": 0
+            }, 
+            "name": "w_a1_a2"
+        }, 
+        {
+            "domain": {
+                "max": 9, 
+                "step": 1, 
+                "min": 0
+            }, 
+            "name": "w_a1_a4"
+        }, 
+        {
+            "domain": {
+                "max": 9, 
+                "step": 1, 
+                "min": 0
+            }, 
+            "name": "w_a2_a4"
+        }, 
+        {
+            "domain": {
+                "max": 9, 
+                "step": 1, 
+                "min": 0
+            }, 
+            "name": "w_a2_a5"
+        }, 
+        {
+            "domain": {
+                "max": 9, 
+                "step": 1, 
+                "min": 0
+            }, 
+            "name": "w_a3_a2"
+        }, 
+        {
+            "domain": {
+                "max": 9, 
+                "step": 1, 
+                "min": 0
+            }, 
+            "name": "w_a3_a4"
+        }, 
+        {
+            "domain": {
+                "max": 9, 
+                "step": 1, 
+                "min": 0
+            }, 
+            "name": "w_a3_a5"
+        }, 
+        {
+            "domain": {
+                "max": 9, 
+                "step": 1, 
+                "min": 0
+            }, 
+            "name": "w_a4_a1"
+        }, 
+        {
+            "domain": {
+                "max": 9, 
+                "step": 1, 
+                "min": 0
+            }, 
+            "name": "w_a5_a2"
+        }, 
+        {
+            "domain": {
+                "max": 9, 
+                "step": 1, 
+                "min": 0
+            }, 
+            "name": "w_a5_a4"
+        }
+    ], 
+    "functions": [
+        {
+            "variables": [
+                "w_a1_a2", 
+                "w_a1_a4", 
+                "w_a4_a1"
+            ], 
+            "name": "a1_money"
+        }, 
+        {
+            "variables": [
+                "w_a1_a2", 
+                "w_a1_a4", 
+                "w_a4_a1"
+            ], 
+            "name": "a1_supply"
+        }, 
+        {
+            "variables": [
+                "w_a1_a2", 
+                "w_a2_a4", 
+                "w_a2_a5", 
+                "w_a3_a2", 
+                "w_a5_a2"
+            ], 
+            "name": "a2_money"
+        }, 
+        {
+            "variables": [
+                "w_a1_a2", 
+                "w_a2_a4", 
+                "w_a2_a5", 
+                "w_a3_a2", 
+                "w_a5_a2"
+            ], 
+            "name": "a2_supply"
+        }, 
+        {
+            "variables": [
+                "w_a3_a2", 
+                "w_a3_a4", 
+                "w_a3_a5"
+            ], 
+            "name": "a3_money"
+        }, 
+        {
+            "variables": [
+                "w_a3_a2", 
+                "w_a3_a4", 
+                "w_a3_a5"
+            ], 
+            "name": "a3_supply"
+        }, 
+        {
+            "variables": [
+                "w_a1_a4", 
+                "w_a2_a4", 
+                "w_a3_a4", 
+                "w_a4_a1", 
+                "w_a5_a4"
+            ], 
+            "name": "a4_money"
+        }, 
+        {
+            "variables": [
+                "w_a1_a4", 
+                "w_a2_a4", 
+                "w_a3_a4", 
+                "w_a4_a1", 
+                "w_a5_a4"
+            ], 
+            "name": "a4_supply"
+        }, 
+        {
+            "variables": [
+                "w_a2_a5", 
+                "w_a3_a5", 
+                "w_a5_a2", 
+                "w_a5_a4"
+            ], 
+            "name": "a5_money"
+        }, 
+        {
+            "variables": [
+                "w_a2_a5", 
+                "w_a3_a5", 
+                "w_a5_a2", 
+                "w_a5_a4"
+            ], 
+            "name": "a5_supply"
+        }
+    ], 
+    "constants": [
+        {
+            "name": "price", 
+            "value": 9
+        }, 
+        {
+            "name": "accuracy", 
+            "value": 30
+        }, 
+        {
+            "name": "tp_a1_a2", 
+            "value": 2.0
+        }, 
+        {
+            "name": "tp_a1_a4", 
+            "value": 1.0
+        }, 
+        {
+            "name": "tp_a2_a4", 
+            "value": 1.5
+        }, 
+        {
+            "name": "tp_a2_a5", 
+            "value": 0.5
+        }, 
+        {
+            "name": "tp_a3_a2", 
+            "value": 1.0
+        }, 
+        {
+            "name": "tp_a3_a4", 
+            "value": 2.5
+        }, 
+        {
+            "name": "tp_a3_a5", 
+            "value": 1.5
+        }, 
+        {
+            "name": "tp_a4_a1", 
+            "value": 1.0
+        }, 
+        {
+            "name": "tp_a5_a2", 
+            "value": 2.0
+        }, 
+        {
+            "name": "tp_a5_a4", 
+            "value": 0.5
+        }, 
+        {
+            "name": "max_delivery_a1", 
+            "value": 440
+        }, 
+        {
+            "name": "demand_a1", 
+            "value": 180
+        }, 
+        {
+            "name": "max_delivery_a2", 
+            "value": 616
+        }, 
+        {
+            "name": "demand_a2", 
+            "value": 384
+        }, 
+        {
+            "name": "max_delivery_a3", 
+            "value": 792
+        }, 
+        {
+            "name": "demand_a3", 
+            "value": 6
+        }, 
+        {
+            "name": "max_delivery_a4", 
+            "value": 88
+        }, 
+        {
+            "name": "demand_a4", 
+            "value": 480
+        }, 
+        {
+            "name": "max_delivery_a5", 
+            "value": 528
+        }, 
+        {
+            "name": "demand_a5", 
+            "value": 300
+        }
+    ]
+}
