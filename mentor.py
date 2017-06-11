@@ -41,7 +41,6 @@ class Mentor:
 		for a in self.agents:
 			agent = self.agents[a]
 			agent.start()
-			break
 
 		# running learning episodes
 		for e in range(self.opt['learning_episodes']):
