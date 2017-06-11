@@ -41,6 +41,7 @@ class Mentor:
 		for a in self.agents:
 			agent = self.agents[a]
 			agent.start()
+			break
 
 		# running learning episodes
 		for e in range(self.opt['learning_episodes']):
@@ -187,8 +188,3 @@ class Mentor:
 		minutes = time_delta.seconds / 60
 		hours = minutes / 60
 		return "%d days & %d:%d:%d.%d" % (time_delta.days, hours, minutes, seconds, time_delta.microseconds)
-
-
-
-
-

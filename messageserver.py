@@ -21,6 +21,7 @@ class MessageServer:
 		for c in self.clients:
 			self.agentLog[c] = 0
 			self.agentLogTest[c] = 0
+			self.timeLog[c] = 0
 	
 	def send(self, sender, receiver, content, sendtime):
 		if self.opt['log_messages']:

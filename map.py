@@ -15,13 +15,13 @@ from messageserver import MessageServer
 				'-c': {'name': 'convergence_size', 'type': 'int', 'default': 30},
 				'-s': {'name': 'standard_deviation', 'type': 'float', 'default': 1.0},
 				'--beta': {'name': 'beta', 'type': 'float', 'default': 0.8},
-				'-m': {'name': 'log_messages', 'type': 'bool', 'default': False},
 				}"""
 opt_pattern = { '-l': {'name': 'learning_episodes', 'type': 'int', 'default': 1}, 
 				'-c': {'name': 'convergence', 'type': 'int', 'default': 5},
 				'-m': {'name': 'max_iteration', 'type': 'int', 'default': 0},
 				'-g': {'name': 'global_state', 'type': 'bool', 'default': False}, 
 				'-o': {'name': 'output', 'type': 'str', 'default': None},
+				'-r': {'name': 'log_messages', 'type': 'bool', 'default': False},
 				'-p': {'name': 'pf', 'type': 'str', 'default': None}, }
 
 arg = ArgParser(sys.argv[2:], opt_pattern)

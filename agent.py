@@ -1,6 +1,7 @@
 from functions import Functions
 from pareto import get_pareto_frontier_by_point
 from util import maxArgs
+from datetime import datetime
 import random
 import threading
 import Queue
@@ -14,7 +15,6 @@ class Agent(threading.Thread):
 		self.is_overdue = False
 
 		self.message_queue = Queue.Queue()
-		self.neighbours_last_value = {n:0 for n in self.variable.neighbours}
 		self.convergenc_count = 0
 
 		self.name = name
@@ -28,6 +28,8 @@ class Agent(threading.Thread):
 		self.functions_indecies = {}
 		self.variable = self.fg.variables[self.name]
 		self.state = None
+
+		self.neighbours_last_value = {n:0 for n in self.variable.neighbours}
 
 		# index 0 is variable itself
 		i = 1
@@ -54,6 +56,7 @@ class Agent(threading.Thread):
 
 	def set_new_state(self):
 		new_state = [ 0 for n in self.variable.neighbours ]
+		new_state.append(0)
 		new_state[0] = self.state[0]
 
 		for n in self.variable.neighbours:
@@ -189,7 +192,7 @@ class Agent(threading.Thread):
 		while not self.message_queue.empty():
 			sender, m = self.message_queue.get()
 			if m['type'] == 'value':
-				self.neighbours_last_value = m['value']
+				self.neighbours_last_value[sender] = m['value']
 	
 	def receive(self, sender, content):
 		self.message_queue.put((sender, content))
@@ -206,9 +209,11 @@ class Agent(threading.Thread):
 			self.set_new_state()
 			action = self.get_action()
 			self.commit_action(action)
+			self.broadcast_value(self.state[0])
 
 			self.clock += 1
 
+		print '%s converged in %d clocks.' % (self.name, self.clock)
 		self.is_terminated = True
 
 	def is_converged(self):
@@ -218,7 +223,6 @@ class Agent(threading.Thread):
 			self.convergenc_count += 1
 			if self.convergenc_count == self.opt['convergence']:
 				converged = True
-				print 'Episode %d converged in %d steps.' % (e, steps)
 		else:
 			self.convergenc_count = 0
 
@@ -228,3 +232,7 @@ class Agent(threading.Thread):
 				self.is_overdue = True
 
 		return converged
+
+	def broadcast_value(self, value):
+		for n in self.variable.neighbours:
+			self.send(n, {'type':'value','value':value})
